@@ -307,7 +307,6 @@ class Puddle {
 	this.nodeSize = 14;
 	this.mathMode = "anair";
 	this.updateLoop = undefined;
-	this.setupDefaultOptions();
     }
     setNodeStyle(nodeStyle) {
 	if (nodeStyle === "water")
@@ -347,17 +346,9 @@ class Puddle {
 	    this.numCols = Math.floor(this.elementWidth/this.nodeSize);
 	}
     }
-    resizeGrid() {
-	this.elementWidth = this.parentNode.scrollWidth;
-	this.elementHeight = this.parentNode.scrollHeight;
-	if (this.elementHeight) {
-	    this.numRows = Math.floor(this.elementHeight/this.nodeSize);
-	    this.numCols = Math.floor(this.elementWidth/this.nodeSize);
-	}
-	this.setupGrid();
-    }
     setupGrid() {
 	clearInterval(this.updateLoop);
+	this.setupDefaultOptions();
 	this.data.refresh(this.numRows, this.numCols);
 
 	this.parentNode.innerHTML = '';
@@ -440,7 +431,7 @@ class Puddle {
 All options
 puddle = new Puddle(<query-element>);
 
-puddle.setNodeStyle(nodeStyle);  // nodeStyle one of ["water", "party", "ascii", "base"]  // Default "base"
+puddle.setNodeStyle(nodeStyle);  // nodeStyle one of ["water", "party", "ascii", "base"]  // Default "ascii"
 puddle.setMathMode(mathMode);  // mathMode one of ["anair", "helias"]   // Default "anair"
 puddle.setNodeSize(nodeSize);  // Default 3% of min(height, width)
 puddle.setUpdateInterval(updateInterval);  // Default 100

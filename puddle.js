@@ -128,7 +128,7 @@ class NodeBase {
 
 	let hueValue = 0;
 	let saturationValue = 0;
-	let lightnessValue = 25 + forceMagnitude/2;
+	let lightnessValue = 0 + forceMagnitude/2;
 	this.element.style.background = "hsl("+ hueValue +", "+ saturationValue +"%, "+ lightnessValue +"%)";
     }
     computeForceAndDrawNodeHelias() {

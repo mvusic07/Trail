@@ -219,14 +219,6 @@ class AsciiNode extends NodeBase {
 	else if (forceMagnitude < 0) forceMagnitude = 0;
 	let index = this.asciiThreshold.findIndex((el) => el >= forceMagnitude);
 	this.element.innerText = this.asciiShades[index];
-	this.hideAscii(); // Initially hide ASCII symbols /////// OD TUD BRISARTI
-    }
-    showAscii() {
-        this.element.style.color = 'white'; // Set color to white to show ASCII symbols
-    }
-    hideAscii() {
-        this.element.style.color = 'transparent'; // Set color to transparent to hide ASCII symbols
-    }
     }
 }
 

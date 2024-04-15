@@ -128,8 +128,8 @@ class NodeBase {
 
 	let hueValue = 0;
 	let saturationValue = 0;
-	let lightnessValue = 25 + forceMagnitude/2;
-	this.element.style.background = "hsl("+ hueValue +", "+ saturationValue +"%, "+ lightnessValue +"%)";
+	let lightnessValue = 0 + forceMagnitude/2;
+	this.element.style.background = 'black';
     }
     computeForceAndDrawNodeHelias() {
 	if (Math.abs(this.nextForce) < this.data.forceCutOff) this.nextForce = 0;
